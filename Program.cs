@@ -179,7 +179,12 @@ app.UseSwaggerUI();
 // HTTPS
 // ===============================
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 // ===============================
 // CORS
